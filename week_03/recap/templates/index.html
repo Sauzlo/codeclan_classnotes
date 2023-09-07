@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for book in books %}
+    <section>
+        <h1>{{ loop.index }}. {{ book.formatted_name() }}</h1>
+        <p>{{ book.description }}</p>
+        <a href="/books/{{ loop.index0 }}">View details</a>
+    </section>
+{% endfor %}
+{% endblock %}
